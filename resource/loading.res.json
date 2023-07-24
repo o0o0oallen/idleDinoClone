@@ -1,0 +1,65 @@
+{
+	"groups": [
+		{
+			"keys": "wenzi_png,barbg_png,bar_png,logo_png,secendb3_png,secendb2_png,secendb1_png,secendb4_png,secendb5_png,cao_png,bj_jpg",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "loading/bar.png",
+			"type": "image",
+			"name": "bar_png"
+		},
+		{
+			"url": "loading/barbg.png",
+			"type": "image",
+			"name": "barbg_png"
+		},
+		{
+			"url": "loading/wenzi.png",
+			"type": "image",
+			"name": "wenzi_png"
+		},
+		{
+			"url": "loading/logo.png",
+			"type": "image",
+			"name": "logo_png"
+		},
+		{
+			"url": "assets/map/secendb3.png",
+			"type": "image",
+			"name": "secendb3_png"
+		},
+		{
+			"url": "assets/map/secendb2.png",
+			"type": "image",
+			"name": "secendb2_png"
+		},
+		{
+			"url": "assets/map/secendb1.png",
+			"type": "image",
+			"name": "secendb1_png"
+		},
+		{
+			"url": "assets/map/secendb4.png",
+			"type": "image",
+			"name": "secendb4_png"
+		},
+		{
+			"url": "assets/map/secendb5.png",
+			"type": "image",
+			"name": "secendb5_png"
+		},
+		{
+			"url": "loading/cao.png",
+			"type": "image",
+			"name": "cao_png"
+		},
+		{
+			"url": "loading/bj.jpg",
+			"type": "image",
+			"name": "bj_jpg"
+		}
+	]
+}

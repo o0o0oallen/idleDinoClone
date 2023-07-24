@@ -1,0 +1,37 @@
+{
+    "IsDebug": false,
+    "showAd": false,    
+    "limitgift": false,
+    "newPlayerActivityA": true,
+    "newPlayerActivityS": true,
+    "zhengbasai": true,
+    "newPlayerBoss": true,
+    "yuandanActive": true,
+    "clearRoles": false,
+    "yuandantime": ["2021/2/11 00:00:00", "2021/2/22 00:00:00"],
+    "newyearUI": ["2021/2/11 00:00:00", "2021/2/27 00:00:00"],
+    "closeServerTip2": "服务器维护中,请稍后登录",
+    "version": "[1,0,71]",
+    "baseUrl": "dino.minigame.vip/game-api",
+    "slotUrl": "gjkl.qcinterfacet.com",
+    "langue": "english",
+    "langue2": "注释：ch yinni yuenan yingyu puyu",
+    "adArrImage": [],
+    "qqcode": "774991329",
+    "notice": {
+        "version": "1.1.28",
+        "time": "2021年5月31日",
+        "code": "",
+        "alwayShow": "1",
+        "newPlayerShow": "1",
+        "info": [
+            [2, "亲爱的各位玩家："],
+            [3, "    《养只恐龙》将于2021年7月31日正式停止运营和下线。由衷感谢一路走来有你们的陪伴与支持。我们将继续保持“让快乐更简单”的研发理念，用心创造快乐.希望在不久的将来，我们会做出更多更好玩更受欢迎的产品给大家体验。祝愿大家生活美满，心想事成！"],
+            [2, ""],
+            [3, ""]
+        ]
+    },
+    "source2":[
+        ["1.0.43", ["newyearUI_png","newyearUI_json","config_zz"]]
+    ]
+}

@@ -1,0 +1,10 @@
+{
+	"initial": [],
+	"game": [
+		"js/jszip.min.js",
+		"js/platform.js",
+		"js/lib.min.js",
+		"js/egret.web.min.js",
+		"js/default.thm.js"
+	]
+}

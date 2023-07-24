@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #888888;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+<!-- <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script> -->
+<script src="minigame-sdk.js"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E4ZBJSH8W"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+</script> -->
+</head>
+<!--fixedNarrow  1334  750 -->
+
+<body>
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="auto" data-scale-mode="fixedNarrow" data-frame-rate="60"
+data-content-width="720" data-content-height="1280" data-multi-fingered="1" data-show-fps="false" data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:1">
+</div>
+<script>
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+
+                // 02.1 通知fb加载进度
+                const progress = Math.floor(loaded / list.length * 100);
+                console.info("loaded: ", loaded);
+                FBInstant.setLoadingProgress(progress);
+
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
+
+    // 加载配置文件，启动egret
+    function loadEgret() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+        xhr.addEventListener("load", function () {
+            var manifest = JSON.parse(xhr.response);
+            var list = manifest.initial.concat(manifest.game);
+            loadScript(list, function () {
+                /**
+                 * {
+                 * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+                 * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+                 * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+                 * "calculateCanvasScaleFactor": //a function return canvas scale factor
+                 * }
+                 **/
+                // 03. 启动Facebook
+                FBInstant.startGameAsync()
+                    .then(function () {
+                        // 记录fb游戏启动事件
+                        gtag("event", "fb_started");
+                        // 04. 设置加载进度为100
+                        FBInstant.setLoadingProgress(100);
+                        // 05. 启动egret
+                        egret.runEgret({
+                            renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor: function (context) {
+                                gtag("event", "enter_first_scene");
+                                var backingStore = context.backingStorePixelRatio ||
+                                    context.webkitBackingStorePixelRatio ||
+                                    context.mozBackingStorePixelRatio ||
+                                    context.msBackingStorePixelRatio ||
+                                    context.oBackingStorePixelRatio ||
+                                    context.backingStorePixelRatio || 1;
+                                return (window.devicePixelRatio || 1) / backingStore;
+                            }
+                        });
+                    })
+                    .catch(function (e) { cc.error(e); });
+
+            });
+        });
+        xhr.send(null);
+    }
+    // 01. 初始化Facebook
+    FBInstant.initializeAsync()
+        .then(function () {
+            // 谷歌分析init start...
+            // 设置user_id
+            const user_id = FBInstant.player.getID();
+            // gtag("config", "<⾕歌分析 衡量id>", {
+            //     cookie_flags: "max-age=7200;secure;samesite=none",
+            //     user_id: user_id
+            // });
+            // 记录初始化成功事件
+            gtag("event", "fb_inited");
+            // 记录启动来源
+            FBInstant.getEntryPointAsync().then(function(entry){
+                console.info("Entry Point: ", entry);
+                gtag("event", "fb_entrypoint", {
+                    entrypoint:entry
+                });
+            });
+            // 记录会话类型
+            const contextType = FBInstant.context.getType();
+            gtag("event", "fb_context", {type: contextType});
+            // 谷歌分析init end...
+
+            // 02. 初始化完毕后，开始加载Egret资源
+            loadEgret();
+        });
+    window["XxxData"] = "game_id=9&channel_id=xy01&is_app=1"
+</script>
+</body>
+
+</html>

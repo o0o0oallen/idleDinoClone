@@ -1,0 +1,1175 @@
+{
+	"frameRate": 24,
+	"name": "shenglichoujiang3",
+	"version": "5.5",
+	"compatibleVersion": "5.5",
+	"armature": [
+		{
+			"type": "Armature",
+			"frameRate": 24,
+			"name": "shenglichoujiang3",
+			"aabb": {
+				"x": -203.5,
+				"y": -153.5,
+				"width": 407,
+				"height": 307
+			},
+			"bone": [
+				{
+					"name": "root"
+				},
+				{
+					"name": "zhongxingdian",
+					"parent": "root",
+					"transform": {
+						"skX": 0.0241,
+						"skY": 0.0241
+					}
+				},
+				{
+					"name": "KPKZQ2",
+					"parent": "zhongxingdian"
+				},
+				{
+					"name": "effect",
+					"parent": "zhongxingdian"
+				},
+				{
+					"name": "ZEBG",
+					"parent": "zhongxingdian"
+				},
+				{
+					"name": "KPKZQ",
+					"parent": "zhongxingdian"
+				},
+				{
+					"name": "KP1_121",
+					"parent": "KPKZQ",
+					"transform": {
+						"x": 3.63,
+						"y": 9.3665
+					}
+				},
+				{
+					"name": "fanpai1_1",
+					"parent": "KPKZQ2",
+					"transform": {
+						"x": 3.63,
+						"y": -228.02
+					}
+				},
+				{
+					"name": "guang1",
+					"parent": "effect"
+				},
+				{
+					"name": "guang2",
+					"parent": "effect"
+				},
+				{
+					"name": "LT1",
+					"parent": "effect"
+				},
+				{
+					"name": "WLT1_1",
+					"parent": "effect"
+				},
+				{
+					"name": "KPBG",
+					"parent": "effect"
+				},
+				{
+					"name": "SG",
+					"parent": "effect"
+				},
+				{
+					"name": "XG1_a",
+					"parent": "effect"
+				},
+				{
+					"name": "XG1_b",
+					"parent": "effect"
+				},
+				{
+					"name": "XG1_c",
+					"parent": "effect"
+				},
+				{
+					"name": "XG1_a1",
+					"parent": "effect"
+				},
+				{
+					"name": "XG111",
+					"parent": "XG1_b"
+				},
+				{
+					"name": "XG11",
+					"parent": "XG1_c"
+				},
+				{
+					"name": "XG",
+					"parent": "XG1_a"
+				},
+				{
+					"name": "XG1",
+					"parent": "XG1_a1"
+				}
+			],
+			"slot": [
+				{
+					"blendMode": "add",
+					"name": "Flash 008 Impact Explosion Up_00005_00000",
+					"parent": "guang1",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"name": "guang",
+					"parent": "guang2",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"name": "guangzhu3_01",
+					"parent": "LT1",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"name": "WLT1_01",
+					"parent": "WLT1_1",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"name": "Flash 008 Impact Explosion Up_00005_000002",
+					"parent": "KPBG",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"displayIndex": -1,
+					"name": "SG1_01",
+					"parent": "SG"
+				},
+				{
+					"blendMode": "add",
+					"name": "li",
+					"parent": "XG",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"name": "li1",
+					"parent": "XG111",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"name": "li11",
+					"parent": "XG11",
+					"color": {
+						"aM": 0
+					}
+				},
+				{
+					"blendMode": "add",
+					"name": "li2",
+					"parent": "XG1",
+					"color": {
+						"aM": 0
+					}
+				}
+			],
+			"skin": [
+				{
+					"slot": [
+						{
+							"name": "li2",
+							"display": [
+								{
+									"name": "li",
+									"transform": {
+										"skX": -40,
+										"skY": -40
+									}
+								}
+							]
+						},
+						{
+							"name": "li1",
+							"display": [
+								{
+									"name": "li",
+									"transform": {
+										"skX": -40,
+										"skY": -40
+									}
+								}
+							]
+						},
+						{
+							"name": "guang",
+							"display": [
+								{
+									"name": "guang"
+								}
+							]
+						},
+						{
+							"name": "Flash 008 Impact Explosion Up_00005_00000",
+							"display": [
+								{
+									"name": "Flash 008 Impact Explosion Up_00005_00000"
+								}
+							]
+						},
+						{
+							"name": "Flash 008 Impact Explosion Up_00005_000002",
+							"display": [
+								{
+									"name": "Flash 008 Impact Explosion Up_00005_000002"
+								}
+							]
+						},
+						{
+							"name": "li",
+							"display": [
+								{
+									"name": "li",
+									"transform": {
+										"skX": -40,
+										"skY": -40
+									}
+								}
+							]
+						},
+						{
+							"name": "WLT1_01",
+							"display": [
+								{
+									"name": "WLT1_01"
+								}
+							]
+						},
+						{
+							"name": "SG1_01",
+							"display": [
+								{
+									"name": "SG1_01"
+								},
+								{
+									"name": "SG1_06"
+								},
+								{
+									"name": "SG1_05"
+								},
+								{
+									"name": "SG1_04"
+								},
+								{
+									"name": "SG1_03"
+								},
+								{
+									"name": "SG1_02"
+								},
+								{
+									"name": "SG1_07"
+								}
+							]
+						},
+						{
+							"name": "guangzhu3_01",
+							"display": [
+								{
+									"name": "guangzhu3_01"
+								}
+							]
+						},
+						{
+							"name": "li11",
+							"display": [
+								{
+									"name": "li",
+									"transform": {
+										"skX": -40,
+										"skY": -40
+									}
+								}
+							]
+						}
+					]
+				}
+			],
+			"animation": [
+				{
+					"duration": 50,
+					"playTimes": 0,
+					"name": "newAnimation",
+					"bone": [
+						{
+							"name": "KPKZQ2",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"x": 0.1,
+									"y": 237.24
+								}
+							]
+						},
+						{
+							"name": "effect",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"x": 0.1,
+									"y": 237.24
+								}
+							]
+						},
+						{
+							"name": "guang1",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"y": -229.47
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 4,
+									"tweenEasing": 0
+								},
+								{
+									"tweenEasing": 0
+								},
+								{
+									"duration": 2,
+									"tweenEasing": 0,
+									"x": 0.15,
+									"y": 1.39
+								},
+								{
+									"tweenEasing": 0,
+									"x": 1.28,
+									"y": 1.28
+								},
+								{
+									"tweenEasing": 0,
+									"x": 1.23,
+									"y": 1.23
+								},
+								{
+									"duration": 41,
+									"x": 1.44,
+									"y": 1.44
+								}
+							]
+						},
+						{
+							"name": "guang2",
+							"translateFrame": [
+								{
+									"duration": 9,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 41,
+									"y": -229.47
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 8,
+									"tweenEasing": 0
+								},
+								{
+									"tweenEasing": 0
+								},
+								{
+									"tweenEasing": 0,
+									"x": 0.95,
+									"y": 1.12
+								},
+								{
+									"duration": 4,
+									"tweenEasing": 0,
+									"x": 1.13,
+									"y": 1.33
+								},
+								{
+									"duration": 36,
+									"x": 1.23,
+									"y": 1.45
+								}
+							]
+						},
+						{
+							"name": "LT1",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"y": -237.21
+								}
+							],
+							"rotateFrame": [
+								{
+									"duration": 50,
+									"rotate": 90
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 7,
+									"tweenEasing": 0,
+									"y": 1.79
+								},
+								{
+									"tweenEasing": 0,
+									"x": 0.22,
+									"y": 0.39
+								},
+								{
+									"tweenEasing": 0,
+									"x": 0.98,
+									"y": 7.79
+								},
+								{
+									"duration": 41,
+									"x": 1.51,
+									"y": 12.04
+								}
+							]
+						},
+						{
+							"name": "WLT1_1",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"y": -231.95
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 9,
+									"tweenEasing": 0
+								},
+								{
+									"tweenEasing": 0
+								},
+								{
+									"duration": 40,
+									"x": 1.05,
+									"y": 1.05
+								}
+							]
+						},
+						{
+							"name": "KPBG",
+							"translateFrame": [
+								{
+									"duration": 8,
+									"tweenEasing": 0
+								},
+								{
+									"tweenEasing": 0
+								},
+								{
+									"duration": 41,
+									"y": -232.67
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 9
+								},
+								{
+									"tweenEasing": 0
+								},
+								{
+									"duration": 40,
+									"x": 1.2,
+									"y": 1.2
+								}
+							]
+						},
+						{
+							"name": "SG",
+							"translateFrame": [
+								{
+									"duration": 15,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 35,
+									"y": -231.29
+								}
+							]
+						},
+						{
+							"name": "XG",
+							"rotateFrame": [
+								{
+									"duration": 28,
+									"tweenEasing": 0,
+									"rotate": -6
+								},
+								{
+									"duration": 11,
+									"tweenEasing": 0,
+									"rotate": -6
+								},
+								{
+									"duration": 11
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 28,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 2,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 4,
+									"tweenEasing": 0,
+									"x": 1.4,
+									"y": 1.4
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0,
+									"x": 1.55,
+									"y": 1.55
+								},
+								{
+									"duration": 11,
+									"x": 0.65,
+									"y": 0.65
+								}
+							]
+						},
+						{
+							"name": "XG111",
+							"rotateFrame": [
+								{
+									"duration": 26,
+									"tweenEasing": 0,
+									"rotate": 1.64
+								},
+								{
+									"duration": 11,
+									"tweenEasing": 0,
+									"rotate": 1.64
+								},
+								{
+									"duration": 13
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 26,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 2,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 4,
+									"tweenEasing": 0,
+									"x": 1.4,
+									"y": 1.4
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0,
+									"x": 1.55,
+									"y": 1.55
+								},
+								{
+									"duration": 13,
+									"x": 0.65,
+									"y": 0.65
+								}
+							]
+						},
+						{
+							"name": "XG11",
+							"rotateFrame": [
+								{
+									"duration": 22,
+									"tweenEasing": 0,
+									"rotate": -3.55
+								},
+								{
+									"duration": 11,
+									"tweenEasing": 0,
+									"rotate": -3.55
+								},
+								{
+									"duration": 17
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 22,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 2,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 4,
+									"tweenEasing": 0,
+									"x": 1.4,
+									"y": 1.4
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0,
+									"x": 1.55,
+									"y": 1.55
+								},
+								{
+									"duration": 17,
+									"x": 0.65,
+									"y": 0.65
+								}
+							]
+						},
+						{
+							"name": "XG1_a",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"x": 43.44,
+									"y": -278.62
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 50,
+									"x": 0.7,
+									"y": 0.7
+								}
+							]
+						},
+						{
+							"name": "XG1_b",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"x": -68.13,
+									"y": -219.97
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 50,
+									"x": 1.15,
+									"y": 1.15
+								}
+							]
+						},
+						{
+							"name": "XG1_c",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"x": 43.57,
+									"y": -156.72
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 50,
+									"x": 0.45,
+									"y": 0.45
+								}
+							]
+						},
+						{
+							"name": "XG1_a1",
+							"translateFrame": [
+								{
+									"duration": 50,
+									"x": -41.81,
+									"y": -299.69
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 50,
+									"x": 0.4,
+									"y": 0.4
+								}
+							]
+						},
+						{
+							"name": "XG1",
+							"rotateFrame": [
+								{
+									"duration": 33,
+									"tweenEasing": 0,
+									"rotate": -6
+								},
+								{
+									"duration": 11,
+									"tweenEasing": 0,
+									"rotate": -6
+								},
+								{
+									"duration": 6
+								}
+							],
+							"scaleFrame": [
+								{
+									"duration": 33,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 2,
+									"tweenEasing": 0,
+									"x": 0.3,
+									"y": 0.3
+								},
+								{
+									"duration": 4,
+									"tweenEasing": 0,
+									"x": 1.4,
+									"y": 1.4
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0,
+									"x": 1.55,
+									"y": 1.55
+								},
+								{
+									"duration": 6,
+									"x": 0.65,
+									"y": 0.65
+								}
+							]
+						}
+					],
+					"slot": [
+						{
+							"name": "Flash 008 Impact Explosion Up_00005_00000",
+							"colorFrame": [
+								{
+									"duration": 7,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0
+								},
+								{
+									"duration": 41,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						},
+						{
+							"name": "guang",
+							"colorFrame": [
+								{
+									"duration": 8,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 62
+									}
+								},
+								{
+									"duration": 4,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 52
+									}
+								},
+								{
+									"duration": 11,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 19
+									}
+								},
+								{
+									"duration": 10,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 19
+									}
+								},
+								{
+									"duration": 15,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						},
+						{
+							"name": "guangzhu3_01",
+							"colorFrame": [
+								{
+									"duration": 7,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0
+								},
+								{
+									"duration": 41,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						},
+						{
+							"name": "WLT1_01",
+							"displayFrame": [
+								{
+									"duration": 10
+								},
+								{
+									"duration": 40,
+									"value": -1
+								}
+							],
+							"colorFrame": [
+								{
+									"duration": 8,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"duration": 3,
+									"tweenEasing": 0,
+									"value": {
+										"rM": 96,
+										"bM": 0
+									}
+								},
+								{
+									"duration": 2,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 62,
+										"rM": 99,
+										"bM": 92
+									}
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 23,
+										"rM": 98,
+										"bM": 49
+									}
+								},
+								{
+									"duration": 31,
+									"value": {
+										"aM": 0,
+										"rM": 98,
+										"bM": 49
+									}
+								}
+							]
+						},
+						{
+							"name": "Flash 008 Impact Explosion Up_00005_000002",
+							"colorFrame": [
+								{
+									"duration": 8,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 40
+									}
+								},
+								{
+									"duration": 2,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 19
+									}
+								},
+								{
+									"duration": 38,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						},
+						{
+							"name": "SG1_01",
+							"displayFrame": [
+								{
+									"duration": 15,
+									"value": -1
+								},
+								{},
+								{
+									"value": 5
+								},
+								{
+									"value": 4
+								},
+								{
+									"value": 3
+								},
+								{
+									"value": 2
+								},
+								{
+									"value": 1
+								},
+								{
+									"value": 6
+								},
+								{
+									"duration": 28,
+									"value": -1
+								}
+							],
+							"colorFrame": [
+								{
+									"duration": 15
+								},
+								{
+									"duration": 35,
+									"value": {
+										"aM": 44,
+										"rM": 99,
+										"bM": 97
+									}
+								}
+							]
+						},
+						{
+							"name": "li",
+							"colorFrame": [
+								{
+									"duration": 27,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"duration": 6,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 11,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						},
+						{
+							"name": "li1",
+							"colorFrame": [
+								{
+									"duration": 25,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"duration": 6,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 13,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						},
+						{
+							"name": "li11",
+							"colorFrame": [
+								{
+									"duration": 21,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"duration": 6,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 17,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						},
+						{
+							"name": "li2",
+							"colorFrame": [
+								{
+									"duration": 32,
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"tweenEasing": 0,
+									"value": {
+										"aM": 0
+									}
+								},
+								{
+									"duration": 6,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 5,
+									"tweenEasing": 0
+								},
+								{
+									"duration": 6,
+									"value": {
+										"aM": 0
+									}
+								}
+							]
+						}
+					]
+				}
+			],
+			"defaultActions": [
+				{
+					"gotoAndPlay": "newAnimation"
+				}
+			]
+		}
+	]
+}

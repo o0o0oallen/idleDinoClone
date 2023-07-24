@@ -1,0 +1,11 @@
+{"file":"map2.png","frames":{
+"yun2_3":{"x":726,"y":1573,"w":720,"h":204,"offX":0,"offY":0,"sourceW":720,"sourceH":230},
+"floor2_1":{"x":2,"y":2,"w":720,"h":601,"offX":0,"offY":2,"sourceW":720,"sourceH":603},
+"floor2_2":{"x":726,"y":561,"w":720,"h":547,"offX":0,"offY":56,"sourceW":720,"sourceH":603},
+"floor2_3":{"x":726,"y":2,"w":720,"h":555,"offX":0,"offY":48,"sourceW":720,"sourceH":603},
+"grass2_1":{"x":2,"y":1437,"w":1400,"h":132,"offX":0,"offY":0,"sourceW":1400,"sourceH":132},
+"shan2_1":{"x":2,"y":607,"w":720,"h":347,"offX":0,"offY":0,"sourceW":720,"sourceH":347},
+"shan2_2":{"x":726,"y":1112,"w":720,"h":321,"offX":0,"offY":26,"sourceW":720,"sourceH":347},
+"shan2_3":{"x":2,"y":958,"w":720,"h":347,"offX":0,"offY":0,"sourceW":720,"sourceH":347},
+"yun2_1":{"x":726,"y":1781,"w":720,"h":144,"offX":0,"offY":0,"sourceW":720,"sourceH":230},
+"yun2_2":{"x":2,"y":1573,"w":720,"h":230,"offX":0,"offY":0,"sourceW":720,"sourceH":230}}}
