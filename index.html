@@ -126,7 +126,7 @@ data-content-width="720" data-content-height="1280" data-multi-fingered="1" data
             // 记录初始化成功事件
             /*gtag("event", "fb_inited");*/
             // 记录启动来源
-            FBInstant.getEntryPointAsync().then(function(entry){
+            /*FBInstant.getEntryPointAsync().then(function(entry){
                 console.info("Entry Point: ", entry);
                 gtag("event", "fb_entrypoint", {
                     entrypoint:entry
@@ -134,7 +134,7 @@ data-content-width="720" data-content-height="1280" data-multi-fingered="1" data
             });
             // 记录会话类型
             const contextType = FBInstant.context.getType();
-            gtag("event", "fb_context", {type: contextType});
+            gtag("event", "fb_context", {type: contextType});*/
             // 谷歌分析init end...
 
             // 02. 初始化完毕后，开始加载Egret资源
