@@ -1,147 +1,453 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
+
+<!-- Mirrored from crazy-ball.apps.minigame.vip/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Jul 2023 09:23:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-    <meta charset="utf-8">
-    <title>Egret</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="full-screen" content="true" />
-    <meta name="screen-orientation" content="portrait" />
-    <meta name="x5-fullscreen" content="true" />
-    <meta name="360-fullscreen" content="true" />
-    <style>
-        html, body {
-            -ms-touch-action: none;
-            background: #888888;
-            padding: 0;
-            border: 0;
-            margin: 0;
-            height: 100%;
-        }
-    </style>
-<!-- <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script> -->
-<script src="minigame-sdk.js"></script>
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E4ZBJSH8W"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-</script> -->
+	<meta charset='utf-8' />
+	<title>疯狂的球球</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+	/>
+	<meta name="renderer" content="webkit"/>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta name="laya" screenorientation="portrait" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv='expires' content='0' />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
 </head>
-<!--fixedNarrow  1334  750 -->
 
-<body>
-    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="auto" data-scale-mode="fixedNarrow" data-frame-rate="60"
-data-content-width="720" data-content-height="1280" data-multi-fingered="1" data-show-fps="false" data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:1">
-</div>
-<script>
-    var loadScript = function (list, callback) {
-        var loaded = 0;
-        var loadNext = function () {
-            loadSingleScript(list[loaded], function () {
-                loaded++;
-
-                // 02.1 通知fb加载进度
-                const progress = Math.floor(loaded / list.length * 100);
-                console.info("loaded: ", loaded);
-                FBInstant.setLoadingProgress(progress);
-
-                if (loaded >= list.length) {
-                    callback();
-                }
-                else {
-                    loadNext();
-                }
-            })
-        };
-        loadNext();
-    };
-
-    var loadSingleScript = function (src, callback) {
-        var s = document.createElement('script');
-        s.async = false;
-        s.src = src;
-        s.addEventListener('load', function () {
-            s.parentNode.removeChild(s);
-            s.removeEventListener('load', arguments.callee, false);
-            callback();
-        }, false);
-        document.body.appendChild(s);
-    };
-
-    // 加载配置文件，启动egret
-    function loadEgret() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', './manifest.json?v=' + Math.random(), true);
-        xhr.addEventListener("load", function () {
-            var manifest = JSON.parse(xhr.response);
-            var list = manifest.initial.concat(manifest.game);
-            loadScript(list, function () {
-                /**
-                 * {
-                 * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
-                 * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
-                 * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
-                 * "calculateCanvasScaleFactor": //a function return canvas scale factor
-                 * }
-                 **/
-                // 03. 启动Facebook
-                FBInstant.startGameAsync()
-                    .then(function () {
-                        // 记录fb游戏启动事件
-                        
-                        // 04. 设置加载进度为100
-                        FBInstant.setLoadingProgress(100);
-                        // 05. 启动egret
-                        egret.runEgret({
-                            renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor: function (context) {
-                                /*gtag("event", "enter_first_scene");*/
-                                var backingStore = context.backingStorePixelRatio ||
-                                    context.webkitBackingStorePixelRatio ||
-                                    context.mozBackingStorePixelRatio ||
-                                    context.msBackingStorePixelRatio ||
-                                    context.oBackingStorePixelRatio ||
-                                    context.backingStorePixelRatio || 1;
-                                return (window.devicePixelRatio || 1) / backingStore;
-                            }
-                        });
-                    })
-                    /*.catch(function (e) { cc.error(e); });*/
-
-            });
-        });
-        xhr.send(null);
-    }
-    // 01. 初始化Facebook
-    FBInstant.initializeAsync()
-        .then(function () {
-            // 谷歌分析init start...
-            // 设置user_id
-            const user_id = FBInstant.player.getID();
-            // gtag("config", "<⾕歌分析 衡量id>", {
-            //     cookie_flags: "max-age=7200;secure;samesite=none",
-            //     user_id: user_id
-            // });
-            // 记录初始化成功事件
-            /*gtag("event", "fb_inited");*/
-            // 记录启动来源
-            /*FBInstant.getEntryPointAsync().then(function(entry){
-                console.info("Entry Point: ", entry);
-                gtag("event", "fb_entrypoint", {
-                    entrypoint:entry
-                });
-            });*/
-            // 记录会话类型
-            const contextType = FBInstant.context.getType();
-            /*gtag("event", "fb_context", {type: contextType});*/
-            // 谷歌分析init end...
-
-            // 02. 初始化完毕后，开始加载Egret资源
-            loadEgret();
-        });
-    window["XxxData"] = "game_id=9&channel_id=xy01&is_app=1"
-</script>
+<body> 
 </body>
+<style>
+    /*主题颜色设置*/
+    :root{
+        --theme-color:#000;
+        --theme-color-secondary:#999; /*该主题暂无用该变量*/
+        --theme-color-primary:#4582FF;
+        --theme-background:#fff;
+        --theme-background-secondary:#fff;
+        --theme-content-background:#fff;
+        --border-radius: 8px;
+        --border-radius-sm: 12px;
+        --border-radius-lg: 15px;
+        --font-size-sm: 12px;
+        --font-size-lg: 18px;
+        --font-size-xl: 20px;
+        --play-btn-bg: #fff;
+        --play-btn-color: #fff;
+        --play-btn-padding-top-bottom: 4px;
+        --play-btn-padding-left-right: 24px;
+    }
+    /*全局基本样式设置*/
+    body{
+        background-color: var(--theme-background);
+        font-family: Helvetica;
+    }
+    
+    .play-btn {
+        display: inline-block;
+        text-align: center;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        line-height: 17px;
+        color: var(--play-btn-color);
+        border-radius: var(--border-radius-sm);
+        background-color: var(--play-btn-bg);
+        padding: var(--play-btn-padding-top-bottom) var(--play-btn-padding-left-right);
+    }
+    .play-btn.is-primary {
+        background-color: var(--theme-color-primary);
+    }
+    
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%
+      }
+    
+      .globalMain {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh
+      }
+    
+      .globalMain:after {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        content: ""
+      }
+    
+      .divUrl {
+        display: none;
+        overflow: hidden;
+        z-index: 4;
+        width: 100vw;
+        height: 0;
+        font-weight: 800;
+        font-size: 20px;
+        color: #747474;
+        transition: height .5s
+      }
+    
+      .mainStyle {
+        display: flex;
+        overflow-x: hidden;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: calc(100vh - 125px)
+      }
+    
+      .clickEnlarge:active {
+        -webkit-tap-highlight-color: transparent;
+        animation: clickEnlarge 0.2s linear;
+      }
+    
+      @keyframes clickEnlarge {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
+        }
+    
+        100% {
+          transform: scale(1.4);
+          box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
+        }
+      } 
+      .display-center-center{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+    </style>
+    
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+    <style>
+        .dialog[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 200;
+            background:var(--theme-background);
+        }
 
+        #adSenseArea[data-v-7e32e512] {
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 50px;
+            max-height: 80px;
+            text-align: center;
+        }
+
+        #iframeShow[data-v-7e32e512] {
+            z-index: 998;
+            border: 0 solid black !important;
+        }
+
+        .iframePosition[data-v-7e32e512] {
+            display: flex;
+            justify-content: center;
+        }
+
+        .closeStyle[data-v-7e32e512] {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 999;
+        }
+
+        #playPage[data-v-7e32e512] {
+            max-width: 100vw;
+            min-height: 98vh;
+            max-height: 100vh;
+            background: #fff;
+        }
+
+        #playPage[data-v-7e32e512] .el-loading-mask {
+            background-color: rgb(255, 255, 255);
+        }
+
+        #playPage[data-v-7e32e512] .el-loading-spinner .circular {
+            display: none;
+        }
+
+        .loadingLayout[data-v-7e32e512] {
+            display: flex;
+            position: fixed;
+            right: calc(50vw - 378px);
+            top: 0;
+            bottom: 0;
+            z-index: 201;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 756px;
+        }
+
+        .landscapeLoadingLayout[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 201;
+        }
+
+        .whirlTip[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 999;
+            background-color: rgb(0, 0, 0, 0.7);
+            background-image: url(/static/images/play/whirlTip.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 157.5px 125px;
+        }
+
+        .stage[data-v-7e32e512] {
+            margin: auto;
+            min-width: 320px;
+            max-width: 375px;
+        }
+
+        .landscape[data-v-7e32e512] {
+            margin: auto;
+            min-width: 568px;
+            max-width: 667px;
+        }
+
+        .landscape>div[data-v-7e32e512]> :first-child {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            filter: blur(4px);
+            transform: scale(1.2);
+        }
+
+        .landscape>div[data-v-7e32e512]> :last-child {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+
+        .landscapeCtx[data-v-7e32e512] {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .verticalStage[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background:var(--theme-background);
+        }
+
+        .verticalStage>div[data-v-7e32e512] {
+            margin: auto;
+            min-width: 320px;
+            max-width: 375px;
+        }
+
+        .white[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar {
+            width: 2px;
+            height: 2px;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar-track {
+            border-radius: 2px;
+            background: #fff;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #bfbfbf;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+        .back{
+            --back-background: #222733;
+            height: 50px;
+            background-color: var(--back-background);
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 20px;
+        }
+    .trembling {
+      animation: trembling 3s linear infinite backwards;
+      -webkit-animation: trembling 3s linear infinite backwards;
+      -moz-animation: trembling 3s linear infinite backwards
+    }
+
+    @-webkit-keyframes trembling {
+      26% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+
+      28% {
+        transform: rotate(-2deg) scale(1.04);
+        -webkit-transform: rotate(-2deg) scale(1.04)
+      }
+
+      32% {
+        transform: rotate(1deg) scale(1.01);
+        -webkit-transform: rotate(1deg) scale(1.01)
+      }
+
+      34% {
+        transform: rotate(-2deg) scale(1.02);
+        -webkit-transform: rotate(-2deg) scale(1.02)
+      }
+
+      36% {
+        transform: rotate(3deg) scale(1);
+        -webkit-transform: rotate(3deg) scale(1)
+      }
+
+      39% {
+        transform: rotate(-1deg) scale(1);
+        -webkit-transform: rotate(-1deg) scale(1)
+      }
+
+      44% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+    }
+
+    @keyframes trembling {
+      26% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+
+      28% {
+        transform: rotate(-2deg) scale(1.04);
+        -webkit-transform: rotate(-2deg) scale(1.04)
+      }
+
+      32% {
+        transform: rotate(1deg) scale(1.01);
+        -webkit-transform: rotate(1deg) scale(1.01)
+      }
+
+      34% {
+        transform: rotate(-2deg) scale(1.02);
+        -webkit-transform: rotate(-2deg) scale(1.02)
+      }
+
+      36% {
+        transform: rotate(3deg) scale(1);
+        -webkit-transform: rotate(3deg) scale(1)
+      }
+
+      39% {
+        transform: rotate(-1deg) scale(1);
+        -webkit-transform: rotate(-1deg) scale(1)
+      }
+
+      44% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+    }        
+    </style>
+<div data-server-rendered="true">
+	<div id="__layout">
+		<div id="Outermost" data-v-e0517636="">
+			<div id="playPage" data-v-7e32e512="" data-v-e0517636="">
+				<div id="stageCtx" style="position:fixed;z-index:0;" data-v-7e32e512="">
+					<div data-v-7e32e512="">   
+										<style>
+										  .loadFullScreen[css-loadFullScreen] {
+											position: fixed;
+											right: 0;
+											left: 0;
+											top: 0;
+											bottom: 0;
+											z-index: 201;
+											width: 100vw;
+											background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+										  }
+										
+										</style>                                    
+					</div>
+					<div id="dialog" class="dialog" data-v-7e32e512="" style="background-color: black;">
+						<div style="visibility: visible;" class="iframePosition" data-v-7e32e512="">
+							<iframe scrolling="no" id="iframeShow" allowfullscreen="" style="border: none; width: calc(469.688px); height: calc((931px - 2rem) - 0px); margin: 1rem 0px;" src="indexz.html" __idm_id__="245761"> </iframe>
+						</div>
+					</div>
+				</div>
+				<div id="whiteScreen" class="white" style="z-index:-1;" data-v-7e32e512=""></div>
+				<!-- end banner -->
+				<div style="display:none" class="whirlTip" id="whirlTip" data-v-7e32e512=""></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Mirrored from crazy-ball.apps.minigame.vip/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Jul 2023 09:23:26 GMT -->
 </html>
